@@ -4,23 +4,23 @@ struct node{
     int data;
     struct node *next;
 };
-struct node* insatbeg(struct node*,int);
-struct node* insatend(struct node*,int);
-struct node* insatmidaf(struct node*,int,int);
-struct node* insatmidbef(struct node*,int,int);
-struct node* deletebeg(struct node*);
-struct node* deletend(struct node*);
-struct node* delaf(struct node*,int);
-struct node* delbef(struct node*, int);
-void printll(struct node*);
+struct node* insatbeg(struct node*,int);       //Insertion at beginning
+struct node* insatend(struct node*,int);       //Insertion at end
+struct node* insatmidaf(struct node*,int,int); //Insertion in the middle after a given node
+struct node* insatmidbef(struct node*,int,int);//Insertion in the middle before a given node
+struct node* deletebeg(struct node*);          //Deletion from the beginning
+struct node* deletend(struct node*);           //Deletion from the end
+struct node* delaf(struct node*,int);          //Deletion from the middle after a given node
+struct node* delbef(struct node*, int);        //Deletion from the middle before a given node
+void printll(struct node*);                    //Printing a Linked List
 int main(){
     int x;
     struct node *start=NULL;
     printf("Enter elements of linked list (-1 to end):");
     scanf("%d",&x);
     while(x!=-1){
-        struct node *new_node=malloc(sizeof(struct node));
-        if(start==NULL){
+        struct node *new_node=malloc(sizeof(struct node));       //Creation of a linked list from scratch until user inputs '-1'
+        if(start==NULL){                                           
             start=new_node;
             new_node->next=NULL;
         }
